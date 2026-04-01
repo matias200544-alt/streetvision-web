@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- =============================================
+       StreetVision — Publicidad LED Constitución
+       Desarrollado para Cloudflare Pages
+       ============================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>StreetVision | Pantalla LED Publicitaria en Constitución</title>
+  <meta name="description" content="StreetVision ofrece publicidad en pantalla LED de alto impacto en Constitución, Región del Maule. Servicio rápido, diseño incluido y plazos flexibles. La ciudad está mirando." />
+  <meta name="keywords" content="pantalla LED, publicidad exterior, Constitución, Maule, publicidad digital, OOH, arriendo pantalla LED" />
+  <meta name="author" content="StreetVision" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="StreetVision | La ciudad está mirando" />
+  <meta property="og:description" content="Publicidad LED de alto impacto en Constitución. Diseño incluido, renovación rápida de contenidos y planes flexibles." />
+  <meta property="og:url" content="https://streetvision.cl" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://streetvision.cl" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =============================================
+       NAVBAR
+       ============================================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-logo">
+        <span class="logo-street">STREET</span><span class="logo-vision">VISION</span>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#galeria" class="nav-link">Galería</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="#contacto" class="nav-cta">Cotizar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============================================
+       HERO / INICIO
+       ============================================= -->
+  <section class="hero" id="inicio">
+    <!-- Fondo dinámico de puntos LED -->
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-badge">📍 Constitución · Región del Maule</div>
+      <h1 class="hero-title">
+        La ciudad<br />
+        <span class="accent">está mirando.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Tu marca en la pantalla LED más impactante de Constitución.<br />
+        Diseño incluido. Cambios rápidos. Planes a tu medida.
+      </p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-primary">Cotizar mi campaña</a>
+        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+      </div>
+    </div>
+
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator">
+      <span>Descubre más</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PROPUESTA DE VALOR (STRIP)
+       ============================================= -->
+  <section class="value-strip">
+    <div class="strip-container">
+      <div class="strip-item">
+        <span class="strip-icon">⚡</span>
+        <span>Activación en 24 hrs</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <span class="strip-icon">🎨</span>
+        <span>Diseño incluido</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <span class="strip-icon">🔄</span>
+        <span>Cambios de contenido rápidos</span>
+      </div>
+      <div class="strip-divider"></div>
+      <div class="strip-item">
+        <span class="strip-icon">📊</span>
+        <span>Planes flexibles</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SERVICIOS
+       ============================================= -->
+  <section class="servicios" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Qué ofrecemos</span>
+        <h2 class="section-title">Tu publicidad,<br /><span class="accent">sin complicaciones</span></h2>
+        <p class="section-desc">
+          Nos encargamos de todo para que tu marca brille donde más personas la ven.
+        </p>
+      </div>
+
+      <div class="servicios-grid">
+
+        <div class="servicio-card" data-animate="fade-up">
+          <div class="card-icon">📡</div>
+          <h3>Pantalla LED de Alta Resolución</h3>
+          <p>Pantalla en zona de alto tráfico vehicular y peatonal en Constitución. Visible las 24 horas del día, los 7 días de la semana.</p>
+        </div>
+
+        <div class="servicio-card" data-animate="fade-up">
+          <div class="card-icon">🎨</div>
+          <h3>Diseño Publicitario Incluido</h3>
+          <p>Nuestro equipo crea el material visual de tu campaña sin costo adicional. Solo cuéntanos tu idea y nos encargamos del resto.</p>
+        </div>
+
+        <div class="servicio-card" data-animate="fade-up">
+          <div class="card-icon">⚡</div>
+          <h3>Activación Ultrarrápida</h3>
+          <p>Tu publicidad puede estar al aire en menos de 24 horas. Olvidate de esperas largas: aquí la agilidad es parte del servicio.</p>
+        </div>
+
+        <div class="servicio-card" data-animate="fade-up">
+          <div class="card-icon">🔄</div>
+          <h3>Renovación de Contenidos</h3>
+          <p>¿Oferta nueva? ¿Campaña de temporada? Actualizamos tu aviso en poco tiempo. Mantenemos tu mensaje siempre fresco y relevante.</p>
+        </div>
+
+        <div class="servicio-card" data-animate="fade-up">
+          <div class="card-icon">📅</div>
+          <h3>Planes Flexibles</h3>
+          <p>Diario, semanal, mensual o por temporada. Adaptamos el plan a tu presupuesto y necesidades sin contratos rígidos.</p>
+        </div>
+
+        <div class="servicio-card" data-animate="fade-up">
+          <div class="card-icon">🤝</div>
+          <h3>Atención Cercana</h3>
+          <p>Somos una empresa local. Tienes contacto directo con nosotros, sin intermediarios ni burocracia. Tu campaña, nuestra prioridad.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       GALERÍA / PORTFOLIO
+       ============================================= -->
+  <section class="galeria" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Campañas que<br /><span class="accent">impactaron la ciudad</span></h2>
+        <p class="section-desc">
+          Ejemplos de publicidad que hemos desplegado en nuestra pantalla.
+        </p>
+      </div>
+
+      <div class="galeria-grid">
+        <!-- Placeholders: reemplaza los src con imágenes reales -->
+        <div class="galeria-item" data-animate="fade-up">
+          <div class="galeria-placeholder">
+            <div class="placeholder-screen">
+              <span class="placeholder-icon">🏪</span>
+              <span class="placeholder-text">Comercio Local</span>
+            </div>
+          </div>
+          <div class="galeria-overlay">
+            <span>Campaña Retail</span>
+          </div>
+        </div>
+
+        <div class="galeria-item featured" data-animate="fade-up">
+          <div class="galeria-placeholder">
+            <div class="placeholder-screen">
+              <span class="placeholder-icon">🎉</span>
+              <span class="placeholder-text">Evento · Temporada</span>
+            </div>
+          </div>
+          <div class="galeria-overlay">
+            <span>Campaña Estacional</span>
+          </div>
+        </div>
+
+        <div class="galeria-item" data-animate="fade-up">
+          <div class="galeria-placeholder">
+            <div class="placeholder-screen">
+              <span class="placeholder-icon">🍽️</span>
+              <span class="placeholder-text">Gastronomía</span>
+            </div>
+          </div>
+          <div class="galeria-overlay">
+            <span>Campaña Gastronómica</span>
+          </div>
+        </div>
+
+        <div class="galeria-item" data-animate="fade-up">
+          <div class="galeria-placeholder">
+            <div class="placeholder-screen">
+              <span class="placeholder-icon">🏗️</span>
+              <span class="placeholder-text">Inmobiliaria · Constructora</span>
+            </div>
+          </div>
+          <div class="galeria-overlay">
+            <span>Campaña Inmobiliaria</span>
+          </div>
+        </div>
+
+        <div class="galeria-item" data-animate="fade-up">
+          <div class="galeria-placeholder">
+            <div class="placeholder-screen">
+              <span class="placeholder-icon">💊</span>
+              <span class="placeholder-text">Salud · Farmacia</span>
+            </div>
+          </div>
+          <div class="galeria-overlay">
+            <span>Campaña Salud</span>
+          </div>
+        </div>
+
+        <div class="galeria-item" data-animate="fade-up">
+          <div class="galeria-placeholder">
+            <div class="placeholder-screen">
+              <span class="placeholder-icon">🚗</span>
+              <span class="placeholder-text">Automotriz · Servicios</span>
+            </div>
+          </div>
+          <div class="galeria-overlay">
+            <span>Campaña Automotriz</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="galeria-note">
+        * ¿Quieres ver tu marca aquí? <a href="#contacto" class="link-accent">Contáctanos hoy.</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- =============================================
+       STATS / NÚMEROS
+       ============================================= -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" data-animate="fade-up">
+          <span class="stat-number" data-target="24">0</span><span class="stat-unit">hrs</span>
+          <span class="stat-label">Tiempo de activación</span>
+        </div>
+        <div class="stat-item" data-animate="fade-up">
+          <span class="stat-number" data-target="7">0</span><span class="stat-unit">días</span>
+          <span class="stat-label">Visibilidad semanal continua</span>
+        </div>
+        <div class="stat-item" data-animate="fade-up">
+          <span class="stat-number" data-target="100">0</span><span class="stat-unit">%</span>
+          <span class="stat-label">Diseño sin costo adicional</span>
+        </div>
+        <div class="stat-item" data-animate="fade-up">
+          <span class="stat-number" data-target="1">0</span><span class="stat-unit">pto.</span>
+          <span class="stat-label">Ubicación estratégica en Constitución</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CONTACTO
+       ============================================= -->
+  <section class="contacto" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contacto</span>
+        <h2 class="section-title">¿Listo para que<br /><span class="accent">te vean todos?</span></h2>
+        <p class="section-desc">
+          Cuéntanos sobre tu negocio y te preparamos una propuesta en menos de 24 horas.
+        </p>
+      </div>
+
+      <div class="contacto-wrapper">
+
+        <!-- Formulario -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa / Negocio</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+56 9 XXXX XXXX" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="servicio">¿Qué te interesa?</label>
+            <select id="servicio" name="servicio">
+              <option value="">Selecciona una opción</option>
+              <option value="semanal">Plan semanal</option>
+              <option value="mensual">Plan mensual</option>
+              <option value="temporada">Plan por temporada</option>
+              <option value="especial">Evento o campaña especial</option>
+              <option value="otro">Otro / No sé aún</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Cuéntanos sobre tu campaña *</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Qué quieres comunicar? ¿Tienes fecha de inicio? ¿Algún detalle especial?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            Enviar cotización
+          </button>
+
+          <div class="form-notice" id="formNotice" style="display:none;"></div>
+        </form>
+
+        <!-- Info lateral -->
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">📧</div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:contacto@streetvision.cl">contacto@streetvision.cl</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <div>
+              <strong>Ubicación</strong>
+              <span>Constitución, Región del Maule, Chile</span>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">⏰</div>
+            <div>
+              <strong>Atención</strong>
+              <span>Lunes a Viernes · 9:00 – 18:00 hrs</span>
+            </div>
+          </div>
+
+          <div class="info-card highlight-card">
+            <div class="info-icon">💡</div>
+            <div>
+              <strong>¿Sin material de diseño?</strong>
+              <span>No te preocupes. Nosotros lo creamos por ti, sin costo adicional.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+       ============================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#inicio" class="nav-logo">
+            <span class="logo-street">STREET</span><span class="logo-vision">VISION</span>
+          </a>
+          <p>La publicidad exterior más dinámica de Constitución. Hacemos que tu mensaje llegue a toda la ciudad.</p>
+        </div>
+
+        <div class="footer-links">
+          <strong>Navegación</strong>
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#galeria">Galería</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+
+        <div class="footer-links">
+          <strong>Contacto</strong>
+          <a href="mailto:contacto@streetvision.cl">contacto@streetvision.cl</a>
+          <span>Constitución, Maule</span>
+          <span>Chile</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> StreetVision. Todos los derechos reservados.</span>
+        <span class="footer-slogan accent">La ciudad está mirando.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
