@@ -41,7 +41,7 @@
       width: 210mm;
       min-height: 297mm;
       background: var(--bg);
-      padding: 18mm 16mm;
+      padding: 18mm 16mm 42mm 16mm;
       position: relative;
       overflow: hidden;
       box-shadow: 0 12px 40px rgba(0,0,0,0.5);
@@ -302,27 +302,31 @@
     }
 
     .founder {
-      margin-top: 4mm;
-      padding: 3mm 5mm;
+      margin-top: 3mm;
+      padding: 2.5mm 4mm;
       background: var(--orange);
       color: var(--bg);
       display: flex;
-      gap: 4mm;
+      gap: 3mm;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: nowrap;
     }
     .founder strong {
       font-family: 'Anton', sans-serif;
-      font-size: 18pt;
+      font-size: 13pt;
       font-weight: 400;
       letter-spacing: 0.01em;
+      white-space: nowrap;
     }
     .founder span {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 8pt;
+      font-size: 7pt;
       font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
+      text-align: right;
+      line-height: 1.4;
     }
 
     /* ===== PAGE 2 ===== */
@@ -571,7 +575,7 @@
   <div class="tarifas-wrap">
     <div class="tarifas-head">
       <h2>TARIFAS <em>2026</em></h2>
-      <span class="tag">Precios netos en CLP · Mensuales</span>
+      <span class="tag">Precios Netos · Mensuales</span>
     </div>
 
     <div class="tarifas-grid">
