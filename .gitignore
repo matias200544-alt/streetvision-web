@@ -3,10 +3,11 @@ TSV PROMOCIONAL.mp4
 LOGO DE THE STREET VISION.ai
 logo street vision.jpeg
 
-# Internos del proyecto, no van a producción
+# Internos del proyecto, no van a producción ni al repo
 v2/
 thumbnails/
 instagram-plan.md
+.agents/
 
 # OS
 .DS_Store
