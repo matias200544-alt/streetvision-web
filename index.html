@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- =============================================
-       StreetVision — Publicidad LED Constitución
-       Desarrollado para Cloudflare Pages
-       ============================================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Meta Tags -->
-  <title>The Street Vision | Pantalla LED Publicitaria en Constitución</title>
-  <meta name="description" content="The Street Vision ofrece publicidad en pantalla LED de alto impacto en Constitución, Región del Maule. Servicio rápido, diseño incluido y plazos flexibles. La ciudad está mirando." />
-  <meta name="keywords" content="pantalla LED, publicidad exterior, Constitución, Maule, publicidad digital, OOH, arriendo pantalla LED, The Street Vision" />
+  <title>The Street Vision · Pantalla LED publicitaria en Constitución</title>
+  <meta name="description" content="Danos tu idea. Nosotros la hacemos realidad. Y se la mostramos al mundo. Pantalla LED 4×3 m en zona céntrica de Constitución. Diseño incluido, planes flexibles." />
+  <meta name="keywords" content="pantalla LED, publicidad exterior, Constitución, Maule, OOH, publicidad digital, arriendo pantalla LED, Street Vision, La ciudad está mirando" />
   <meta name="author" content="The Street Vision" />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0F1A36" />
 
-  <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="The Street Vision | La ciudad está mirando" />
-  <meta property="og:description" content="Publicidad LED de alto impacto en Constitución. Diseño incluido, renovación rápida de contenidos y planes flexibles." />
+  <meta property="og:title" content="The Street Vision · La ciudad está mirando" />
+  <meta property="og:description" content="Pantalla LED 4×3 m en el corazón de Constitución. Tu marca frente a toda la ciudad, todos los días." />
   <meta property="og:url" content="https://streetvision.cl" />
+  <meta property="og:image" content="https://streetvision.cl/logo-streetvision.svg" />
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://streetvision.cl" />
+  <link rel="icon" type="image/svg+xml" href="logo-streetvision.svg" />
 
-  <!-- Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -35,44 +34,71 @@
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#inicio" class="nav-logo">
-        <img src="logo street vision.jpeg" alt="The Street Vision" class="nav-logo-img" />
+        <img src="logo-streetvision.svg" alt="The Street Vision" class="nav-logo-img" />
       </a>
 
-      <!-- Hamburger (mobile) -->
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
 
       <nav class="nav-menu" id="navMenu">
-        <a href="#inicio" class="nav-link">Inicio</a>
-        <a href="#servicios" class="nav-link">Servicios</a>
-        <a href="#galeria" class="nav-link">Galería</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
-        <a href="#contacto" class="nav-cta">Cotizar ahora</a>
+        <a href="#proceso" class="nav-link">Cómo funciona</a>
+        <a href="#planes" class="nav-link">Planes</a>
+        <a href="#extras" class="nav-link">Extras</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contacto" class="nav-cta">Cotizar</a>
       </nav>
     </div>
   </header>
 
   <!-- =============================================
-       HERO / INICIO
+       HERO
        ============================================= -->
   <section class="hero" id="inicio">
-    <!-- Fondo dinámico de puntos LED -->
     <canvas class="hero-canvas" id="heroCanvas"></canvas>
 
-    <div class="hero-content">
-      <img src="logo street vision.jpeg" alt="The Street Vision — La ciudad está mirando" class="hero-logo" />
-      <p class="hero-subtitle">
-        Tu marca en la pantalla LED más impactante de Constitución.<br />
-        Diseño incluido. Cambios rápidos. Planes a tu medida.
-      </p>
-      <div class="hero-actions">
-        <a href="#contacto" class="btn btn-primary">Cotizar mi campaña</a>
-        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="hero-eyebrow">Publicidad LED · Constitución</span>
+        <h1 class="hero-title">
+          Danos tu idea.<br/>
+          <span class="accent">Nosotros la hacemos realidad.</span><br/>
+          Y se la mostramos al mundo.
+        </h1>
+        <p class="hero-sub">
+          Pantalla LED <strong>4×3 m</strong> en el corazón de Constitución. Tu marca frente a toda la ciudad,
+          todos los días, de 7:00 a 22:00.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary">Cotizar mi campaña</a>
+          <a href="#planes" class="btn btn-outline">Ver planes</a>
+        </div>
+        <div class="hero-meta">
+          <div class="meta-item">
+            <strong>15 hrs</strong>
+            <span>de visibilidad diaria</span>
+          </div>
+          <div class="meta-item">
+            <strong>600+</strong>
+            <span>pasadas por día</span>
+          </div>
+          <div class="meta-item">
+            <strong>10 seg</strong>
+            <span>por spot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-video-wrap">
+        <div class="hero-video-frame">
+          <video class="hero-video" autoplay muted loop playsinline poster="logo-streetvision.svg">
+            <source src="tsv-promo-web.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero-video-glow"></div>
       </div>
     </div>
 
-    <!-- Indicador de scroll -->
     <div class="scroll-indicator">
       <span>Descubre más</span>
       <div class="scroll-arrow"></div>
@@ -80,203 +106,323 @@
   </section>
 
   <!-- =============================================
-       PROPUESTA DE VALOR (STRIP)
+       VALUE STRIP
        ============================================= -->
   <section class="value-strip">
-    <div class="strip-container">
-      <div class="strip-item">
-        <span class="strip-icon">⚡</span>
-        <span>Activación en 24 hrs</span>
+    <div class="strip-track">
+      <div class="strip-set">
+        <span>⚡ Activación en 24 hrs</span>
+        <span>·</span>
+        <span>🎨 Diseño incluido</span>
+        <span>·</span>
+        <span>🔄 Cambios rápidos</span>
+        <span>·</span>
+        <span>📍 Centro de Constitución</span>
+        <span>·</span>
+        <span>📊 Planes flexibles</span>
+        <span>·</span>
       </div>
-      <div class="strip-divider"></div>
-      <div class="strip-item">
-        <span class="strip-icon">🎨</span>
-        <span>Diseño incluido</span>
-      </div>
-      <div class="strip-divider"></div>
-      <div class="strip-item">
-        <span class="strip-icon">🔄</span>
-        <span>Cambios de contenido rápidos</span>
-      </div>
-      <div class="strip-divider"></div>
-      <div class="strip-item">
-        <span class="strip-icon">📊</span>
-        <span>Planes flexibles</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- =============================================
-       SERVICIOS
-       ============================================= -->
-  <section class="servicios" id="servicios">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Qué ofrecemos</span>
-        <h2 class="section-title">Tu publicidad,<br /><span class="accent">sin complicaciones</span></h2>
-        <p class="section-desc">
-          Nos encargamos de todo para que tu marca brille donde más personas la ven.
-        </p>
-      </div>
-
-      <div class="servicios-grid">
-
-        <div class="servicio-card" data-animate="fade-up">
-          <div class="card-icon">📡</div>
-          <h3>Pantalla LED de Alta Resolución</h3>
-          <p>Pantalla en zona de alto tráfico vehicular y peatonal en Constitución. Visible las 24 horas del día, los 7 días de la semana.</p>
-        </div>
-
-        <div class="servicio-card" data-animate="fade-up">
-          <div class="card-icon">🎨</div>
-          <h3>Diseño Publicitario Incluido</h3>
-          <p>Nuestro equipo crea el material visual de tu campaña sin costo adicional. Solo cuéntanos tu idea y nos encargamos del resto.</p>
-        </div>
-
-        <div class="servicio-card" data-animate="fade-up">
-          <div class="card-icon">⚡</div>
-          <h3>Activación Ultrarrápida</h3>
-          <p>Tu publicidad puede estar al aire en menos de 24 horas. Olvidate de esperas largas: aquí la agilidad es parte del servicio.</p>
-        </div>
-
-        <div class="servicio-card" data-animate="fade-up">
-          <div class="card-icon">🔄</div>
-          <h3>Renovación de Contenidos</h3>
-          <p>¿Oferta nueva? ¿Campaña de temporada? Actualizamos tu aviso en poco tiempo. Mantenemos tu mensaje siempre fresco y relevante.</p>
-        </div>
-
-        <div class="servicio-card" data-animate="fade-up">
-          <div class="card-icon">📅</div>
-          <h3>Planes Flexibles</h3>
-          <p>Diario, semanal, mensual o por temporada. Adaptamos el plan a tu presupuesto y necesidades sin contratos rígidos.</p>
-        </div>
-
-        <div class="servicio-card" data-animate="fade-up">
-          <div class="card-icon">🤝</div>
-          <h3>Atención Cercana</h3>
-          <p>Somos una empresa local. Tienes contacto directo con nosotros, sin intermediarios ni burocracia. Tu campaña, nuestra prioridad.</p>
-        </div>
-
+      <div class="strip-set" aria-hidden="true">
+        <span>⚡ Activación en 24 hrs</span>
+        <span>·</span>
+        <span>🎨 Diseño incluido</span>
+        <span>·</span>
+        <span>🔄 Cambios rápidos</span>
+        <span>·</span>
+        <span>📍 Centro de Constitución</span>
+        <span>·</span>
+        <span>📊 Planes flexibles</span>
+        <span>·</span>
       </div>
     </div>
   </section>
 
   <!-- =============================================
-       GALERÍA / PORTFOLIO
+       PROCESO — CÓMO FUNCIONA
        ============================================= -->
-  <section class="galeria" id="galeria">
+  <section class="proceso" id="proceso">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Campañas que<br /><span class="accent">impactaron la ciudad</span></h2>
+        <span class="section-tag">Cómo funciona</span>
+        <h2 class="section-title">Tres pasos.<br/><span class="accent">Cero complicaciones.</span></h2>
+        <p class="section-desc">Tú nos cuentas qué quieres comunicar. De ahí en adelante nos encargamos nosotros.</p>
+      </div>
+
+      <div class="proceso-grid">
+        <div class="proceso-card" data-animate>
+          <div class="proceso-number">01</div>
+          <h3>Danos tu idea</h3>
+          <p>Una promo, un evento, una oferta, un lanzamiento. Lo que sea que quieras decir, nos lo cuentas.</p>
+        </div>
+        <div class="proceso-card" data-animate>
+          <div class="proceso-number">02</div>
+          <h3>La hacemos realidad</h3>
+          <p>Nuestro equipo diseña tu pieza publicitaria sin costo adicional. Imagen o video, lista en menos de 24 hrs.</p>
+        </div>
+        <div class="proceso-card" data-animate>
+          <div class="proceso-number">03</div>
+          <h3>Se la mostramos al mundo</h3>
+          <p>Tu publicidad aparece en la pantalla LED, frente a miles de personas que pasan cada día por el centro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       PLANES
+       ============================================= -->
+  <section class="planes" id="planes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tarifas</span>
+        <h2 class="section-title">Elige cuándo<br/><span class="accent">la ciudad te ve.</span></h2>
         <p class="section-desc">
-          Ejemplos de publicidad que hemos desplegado en nuestra pantalla.
+          La pantalla opera de 7:00 a 22:00. Compras un slot fijo en el loop de 90 segundos, con 10 segundos de exposición por pasada.
+          Elige las franjas horarias que mejor calzan con tu negocio.
         </p>
       </div>
 
-      <div class="galeria-grid">
-        <!-- Placeholders: reemplaza los src con imágenes reales -->
-        <div class="galeria-item" data-animate="fade-up">
-          <div class="galeria-placeholder">
-            <div class="placeholder-screen">
-              <span class="placeholder-icon">🏪</span>
-              <span class="placeholder-text">Comercio Local</span>
-            </div>
+      <div class="founder-banner" data-animate>
+        <span class="founder-badge">🚀 Tarifa Fundadores</span>
+        <p><strong>20% OFF</strong> los primeros 3 meses para los primeros 5 anunciantes que se sumen al lanzamiento.</p>
+      </div>
+
+      <div class="planes-grid">
+        <div class="plan-card" data-animate>
+          <div class="plan-tag">Para empezar</div>
+          <h3 class="plan-name">Off-Peak</h3>
+          <p class="plan-hours">7:00 – 9:00 · 21:00 – 22:00</p>
+          <div class="plan-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount">35.000</span>
+            <span class="price-period">/ mes</span>
           </div>
-          <div class="galeria-overlay">
-            <span>Campaña Retail</span>
-          </div>
+          <p class="plan-tax">+ IVA · ~120 pasadas/día</p>
+          <ul class="plan-features">
+            <li>3 horas diarias de exposición</li>
+            <li>1 cambio de creatividad/mes incluido</li>
+            <li>Diseño de pieza incluido</li>
+            <li>Reporte mensual de rotación</li>
+          </ul>
+          <a href="#contacto" class="btn btn-outline btn-full">Cotizar Off-Peak</a>
         </div>
 
-        <div class="galeria-item featured" data-animate="fade-up">
-          <div class="galeria-placeholder">
-            <div class="placeholder-screen">
-              <span class="placeholder-icon">🎉</span>
-              <span class="placeholder-text">Evento · Temporada</span>
-            </div>
+        <div class="plan-card" data-animate>
+          <div class="plan-tag">Buen alcance</div>
+          <h3 class="plan-name">Standard</h3>
+          <p class="plan-hours">9:00 – 12:30 · 14:30 – 18:00</p>
+          <div class="plan-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount">85.000</span>
+            <span class="price-period">/ mes</span>
           </div>
-          <div class="galeria-overlay">
-            <span>Campaña Estacional</span>
-          </div>
+          <p class="plan-tax">+ IVA · ~280 pasadas/día</p>
+          <ul class="plan-features">
+            <li>7 horas diarias de exposición</li>
+            <li>2 cambios de creatividad/mes</li>
+            <li>Diseño de pieza incluido</li>
+            <li>Reporte mensual de rotación</li>
+          </ul>
+          <a href="#contacto" class="btn btn-outline btn-full">Cotizar Standard</a>
         </div>
 
-        <div class="galeria-item" data-animate="fade-up">
-          <div class="galeria-placeholder">
-            <div class="placeholder-screen">
-              <span class="placeholder-icon">🍽️</span>
-              <span class="placeholder-text">Gastronomía</span>
-            </div>
+        <div class="plan-card highlighted" data-animate>
+          <div class="plan-tag">Horarios peak</div>
+          <h3 class="plan-name">Prime</h3>
+          <p class="plan-hours">12:30 – 14:30 · 18:00 – 21:00</p>
+          <div class="plan-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount">120.000</span>
+            <span class="price-period">/ mes</span>
           </div>
-          <div class="galeria-overlay">
-            <span>Campaña Gastronómica</span>
-          </div>
+          <p class="plan-tax">+ IVA · ~200 pasadas/día (alto tráfico)</p>
+          <ul class="plan-features">
+            <li>5 hrs en horario de almuerzo + after-office</li>
+            <li>2 cambios de creatividad/mes</li>
+            <li>Diseño de pieza incluido</li>
+            <li>Reporte mensual de rotación</li>
+            <li>Prioridad en disponibilidad</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary btn-full">Cotizar Prime</a>
         </div>
 
-        <div class="galeria-item" data-animate="fade-up">
-          <div class="galeria-placeholder">
-            <div class="placeholder-screen">
-              <span class="placeholder-icon">🏗️</span>
-              <span class="placeholder-text">Inmobiliaria · Constructora</span>
-            </div>
+        <div class="plan-card premium" data-animate>
+          <div class="plan-tag premium-tag">Máxima exposición</div>
+          <h3 class="plan-name">Full Day</h3>
+          <p class="plan-hours">7:00 – 22:00 · todas las franjas</p>
+          <div class="plan-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount">170.000</span>
+            <span class="price-period">/ mes</span>
           </div>
-          <div class="galeria-overlay">
-            <span>Campaña Inmobiliaria</span>
-          </div>
-        </div>
-
-        <div class="galeria-item" data-animate="fade-up">
-          <div class="galeria-placeholder">
-            <div class="placeholder-screen">
-              <span class="placeholder-icon">💊</span>
-              <span class="placeholder-text">Salud · Farmacia</span>
-            </div>
-          </div>
-          <div class="galeria-overlay">
-            <span>Campaña Salud</span>
-          </div>
-        </div>
-
-        <div class="galeria-item" data-animate="fade-up">
-          <div class="galeria-placeholder">
-            <div class="placeholder-screen">
-              <span class="placeholder-icon">🚗</span>
-              <span class="placeholder-text">Automotriz · Servicios</span>
-            </div>
-          </div>
-          <div class="galeria-overlay">
-            <span>Campaña Automotriz</span>
-          </div>
+          <p class="plan-tax">+ IVA · ~600 pasadas/día</p>
+          <ul class="plan-features">
+            <li>15 hrs diarias de exposición</li>
+            <li>4 cambios de creatividad/mes (semanal)</li>
+            <li>Diseño de pieza incluido</li>
+            <li>Reporte mensual de rotación</li>
+            <li>Prioridad en disponibilidad</li>
+            <li>Soporte directo prioritario</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary btn-full">Cotizar Full Day</a>
         </div>
       </div>
 
-      <p class="galeria-note">
-        * ¿Quieres ver tu marca aquí? <a href="#contacto" class="link-accent">Contáctanos hoy.</a>
+      <p class="planes-note">
+        * Loop de 90 segundos con 9 anunciantes simultáneos. Spots de 10 segundos. Precios sin IVA.
       </p>
     </div>
   </section>
 
   <!-- =============================================
-       STATS / NÚMEROS
+       EXTRAS / ADD-ONS
+       ============================================= -->
+  <section class="extras" id="extras">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Extras</span>
+        <h2 class="section-title">Cuando necesitas<br/><span class="accent">algo más.</span></h2>
+      </div>
+
+      <div class="extras-grid">
+        <div class="extra-card" data-animate>
+          <div class="extra-icon">🔄</div>
+          <h3>Cambios extra de creatividad</h3>
+          <p class="extra-price">Desde $10.000</p>
+          <p>¿Cambias oferta cada semana? Suma cambios a la medida o lleva el pack de 4 cambios por <strong>$32.000</strong>.</p>
+        </div>
+
+        <div class="extra-card" data-animate>
+          <div class="extra-icon">⭐</div>
+          <h3>Spot exclusivo</h3>
+          <p class="extra-price">$25.000 – $60.000</p>
+          <p>La pantalla 100% para tu marca durante 1-3 minutos. Ideal para lanzamientos o promociones flash.</p>
+        </div>
+
+        <div class="extra-card" data-animate>
+          <div class="extra-icon">🎨</div>
+          <h3>Diseño custom</h3>
+          <p class="extra-price">$25.000 – $50.000</p>
+          <p>¿Necesitas algo más allá del template incluido? Animaciones complejas o piezas a medida.</p>
+        </div>
+
+        <div class="extra-card" data-animate>
+          <div class="extra-icon">📅</div>
+          <h3>Campañas de evento</h3>
+          <p class="extra-price">$20.000 / día</p>
+          <p>Conciertos, ferias, lanzamientos. Pauta puntual de 1 a 3 días sin compromiso mensual.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SPECS DE LA PANTALLA
+       ============================================= -->
+  <section class="specs" id="specs">
+    <div class="container">
+      <div class="specs-wrap">
+        <div class="specs-content">
+          <span class="section-tag">Ficha técnica</span>
+          <h2 class="section-title">Una pantalla<br/><span class="accent">hecha para ser vista.</span></h2>
+          <p class="section-desc-left">
+            Tecnología LED de alta resolución, ubicada en una zona de tráfico vehicular y peatonal continuo.
+            Visibilidad clara de día y de noche.
+          </p>
+
+          <ul class="specs-list">
+            <li><strong>Dimensiones:</strong> 4 m de ancho × 3 m de alto</li>
+            <li><strong>Pixel pitch:</strong> P5 (5 mm)</li>
+            <li><strong>Resolución de envío:</strong> 800 × 560 px</li>
+            <li><strong>Horario de operación:</strong> 7:00 – 22:00 hrs (15 hrs/día)</li>
+            <li><strong>Días al aire:</strong> 7 días a la semana</li>
+            <li><strong>Ubicación:</strong> centro de Constitución, Región del Maule</li>
+          </ul>
+
+          <a href="#contacto" class="btn btn-primary">Quiero estar ahí</a>
+        </div>
+
+        <div class="specs-visual">
+          <div class="led-screen">
+            <div class="led-frame">
+              <div class="led-content">
+                <span class="led-text">TU MARCA</span>
+                <span class="led-text-sub">AQUÍ</span>
+              </div>
+            </div>
+            <div class="led-pole"></div>
+            <div class="led-base"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       STATS
        ============================================= -->
   <section class="stats">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-item" data-animate="fade-up">
-          <span class="stat-number" data-target="24">0</span><span class="stat-unit">hrs</span>
-          <span class="stat-label">Tiempo de activación</span>
+        <div class="stat-item" data-animate>
+          <span class="stat-number" data-target="15">0</span><span class="stat-unit">hrs</span>
+          <span class="stat-label">Visibilidad diaria</span>
         </div>
-        <div class="stat-item" data-animate="fade-up">
-          <span class="stat-number" data-target="7">0</span><span class="stat-unit">días</span>
-          <span class="stat-label">Visibilidad semanal continua</span>
+        <div class="stat-item" data-animate>
+          <span class="stat-number" data-target="600">0</span><span class="stat-unit">+</span>
+          <span class="stat-label">Pasadas por día</span>
         </div>
-        <div class="stat-item" data-animate="fade-up">
+        <div class="stat-item" data-animate>
           <span class="stat-number" data-target="100">0</span><span class="stat-unit">%</span>
-          <span class="stat-label">Diseño sin costo adicional</span>
+          <span class="stat-label">Diseño incluido</span>
         </div>
-        <div class="stat-item" data-animate="fade-up">
-          <span class="stat-number" data-target="1">0</span><span class="stat-unit">pto.</span>
-          <span class="stat-label">Ubicación estratégica en Constitución</span>
+        <div class="stat-item" data-animate>
+          <span class="stat-number" data-target="24">0</span><span class="stat-unit">hrs</span>
+          <span class="stat-label">Activación al aire</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FAQ
+       ============================================= -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Preguntas frecuentes</span>
+        <h2 class="section-title">Lo que más<br/><span class="accent">nos preguntan.</span></h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" data-animate>
+          <summary>¿Qué necesito para empezar?</summary>
+          <p>Solo tu idea. Nosotros nos encargamos del diseño, la animación si aplica, y la programación en la pantalla. Si ya tienes material publicitario propio, también lo aceptamos en formatos estándar.</p>
+        </details>
+        <details class="faq-item" data-animate>
+          <summary>¿En cuánto tiempo está al aire mi publicidad?</summary>
+          <p>En menos de 24 horas desde que aprobamos juntos la pieza final.</p>
+        </details>
+        <details class="faq-item" data-animate>
+          <summary>¿Puedo cambiar el contenido durante el mes?</summary>
+          <p>Sí. Cada plan incluye una cantidad definida de cambios mensuales sin costo. Si necesitas más, los add-ons de cambios extra parten desde $10.000.</p>
+        </details>
+        <details class="faq-item" data-animate>
+          <summary>¿Hay contratos de permanencia?</summary>
+          <p>No. Los planes son mensuales y puedes terminar cuando quieras avisando con 7 días de anticipación.</p>
+        </details>
+        <details class="faq-item" data-animate>
+          <summary>¿En qué formato debo entregar mi material?</summary>
+          <p>Imagen JPG/PNG o video MP4 en resolución 800 × 560 px (ratio ~10:7). Si solo tienes el material en otra proporción, nosotros lo adaptamos sin costo.</p>
+        </details>
+        <details class="faq-item" data-animate>
+          <summary>¿La pantalla es visible de día?</summary>
+          <p>Sí. La luminosidad se ajusta automáticamente al ambiente. De día se ve nítida con luz solar directa, y de noche en modo atenuado para no incomodar a peatones.</p>
+        </details>
+        <details class="faq-item" data-animate>
+          <summary>¿Pueden hacer videos o solo imágenes?</summary>
+          <p>Ambos. Tu spot puede ser una imagen estática o un video animado de hasta 10 segundos por pasada.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -288,16 +434,20 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Contacto</span>
-        <h2 class="section-title">¿Listo para que<br /><span class="accent">te vean todos?</span></h2>
+        <h2 class="section-title">¿Listo para que<br/><span class="accent">te vean todos?</span></h2>
         <p class="section-desc">
-          Cuéntanos sobre tu negocio y te preparamos una propuesta en menos de 24 horas.
+          Cuéntanos sobre tu negocio. Te respondemos con una propuesta concreta en menos de 24 horas.
         </p>
       </div>
 
       <div class="contacto-wrapper">
-
-        <!-- Formulario -->
         <form class="contact-form" id="contactForm" novalidate>
+          <!-- Web3Forms: reemplazar YOUR_ACCESS_KEY con tu access_key real (gratis en https://web3forms.com) -->
+          <input type="hidden" name="access_key" value="125f3e66-de82-4693-88d3-2d7bf9c08562" />
+          <input type="hidden" name="subject" value="Nueva cotización desde streetvision.cl" />
+          <input type="hidden" name="from_name" value="Sitio Web Street Vision" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
           <div class="form-row">
             <div class="form-group">
               <label for="nombre">Nombre completo *</label>
@@ -321,14 +471,15 @@
           </div>
 
           <div class="form-group">
-            <label for="servicio">¿Qué te interesa?</label>
+            <label for="servicio">Plan de interés</label>
             <select id="servicio" name="servicio">
               <option value="">Selecciona una opción</option>
-              <option value="semanal">Plan semanal</option>
-              <option value="mensual">Plan mensual</option>
-              <option value="temporada">Plan por temporada</option>
-              <option value="especial">Evento o campaña especial</option>
-              <option value="otro">Otro / No sé aún</option>
+              <option value="Off-Peak">Off-Peak — $35.000/mes</option>
+              <option value="Standard">Standard — $85.000/mes</option>
+              <option value="Prime">Prime — $120.000/mes</option>
+              <option value="Full Day">Full Day — $170.000/mes</option>
+              <option value="Evento puntual">Evento puntual</option>
+              <option value="No estoy seguro">Aún no lo decido</option>
             </select>
           </div>
 
@@ -338,43 +489,50 @@
           </div>
 
           <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
-            Enviar cotización
+            <span class="btn-label">Enviar cotización</span>
           </button>
 
           <div class="form-notice" id="formNotice" style="display:none;"></div>
         </form>
 
-        <!-- Info lateral -->
         <div class="contact-info">
-          <div class="info-card">
+          <a class="info-card" href="mailto:contacto@streetvision.cl">
             <div class="info-icon">📧</div>
             <div>
               <strong>Email</strong>
-              <a href="mailto:contacto@streetvision.cl">contacto@streetvision.cl</a>
+              <span>contacto@streetvision.cl</span>
             </div>
-          </div>
+          </a>
+
+          <a class="info-card" href="https://wa.me/56951015652?text=Hola!%20Vengo%20del%20sitio%20web%20de%20Street%20Vision%20y%20me%20interesa%20cotizar." target="_blank" rel="noopener">
+            <div class="info-icon">💬</div>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>+56 9 5101 5652</span>
+            </div>
+          </a>
 
           <div class="info-card">
             <div class="info-icon">📍</div>
             <div>
               <strong>Ubicación</strong>
-              <span>Constitución, Región del Maule, Chile</span>
+              <span>Centro de Constitución<br/>Región del Maule, Chile</span>
             </div>
           </div>
 
           <div class="info-card">
             <div class="info-icon">⏰</div>
             <div>
-              <strong>Atención</strong>
-              <span>Lunes a Viernes · 9:00 – 18:00 hrs</span>
+              <strong>Pantalla al aire</strong>
+              <span>Lunes a Domingo<br/>7:00 – 22:00 hrs</span>
             </div>
           </div>
 
           <div class="info-card highlight-card">
             <div class="info-icon">💡</div>
             <div>
-              <strong>¿Sin material de diseño?</strong>
-              <span>No te preocupes. Nosotros lo creamos por ti, sin costo adicional.</span>
+              <strong>¿Sin material?</strong>
+              <span>No te preocupes. Diseñamos tu pieza por ti, sin costo adicional.</span>
             </div>
           </div>
         </div>
@@ -390,35 +548,51 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#inicio" class="nav-logo">
-            <img src="logo street vision.jpeg" alt="The Street Vision" class="footer-logo-img" />
+            <img src="logo-streetvision.svg" alt="The Street Vision" class="footer-logo-img" />
           </a>
-          <p>La publicidad exterior más dinámica de Constitución. Hacemos que tu mensaje llegue a toda la ciudad.</p>
+          <p>Pantalla LED publicitaria en el corazón de Constitución. Tu marca, frente a toda la ciudad.</p>
         </div>
 
         <div class="footer-links">
-          <strong>Navegación</strong>
-          <a href="#inicio">Inicio</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#galeria">Galería</a>
+          <strong>Sitio</strong>
+          <a href="#proceso">Cómo funciona</a>
+          <a href="#planes">Planes</a>
+          <a href="#extras">Extras</a>
+          <a href="#faq">FAQ</a>
           <a href="#contacto">Contacto</a>
         </div>
 
         <div class="footer-links">
           <strong>Contacto</strong>
           <a href="mailto:contacto@streetvision.cl">contacto@streetvision.cl</a>
-          <span>Constitución, Maule</span>
-          <span>Chile</span>
+          <a href="https://wa.me/56951015652" target="_blank" rel="noopener">WhatsApp +56 9 5101 5652</a>
+          <span>Constitución, Maule, Chile</span>
+        </div>
+
+        <div class="footer-links">
+          <strong>Empresa</strong>
+          <span>The Street Vision Limitada</span>
+          <span>RUT 78.358.077-2</span>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="currentYear"></span> StreetVision. Todos los derechos reservados.</span>
+        <span>© <span id="currentYear"></span> The Street Vision Limitada. Todos los derechos reservados.</span>
         <span class="footer-slogan accent">La ciudad está mirando.</span>
       </div>
     </div>
   </footer>
 
-  <!-- Script -->
+  <!-- =============================================
+       FAB WHATSAPP
+       ============================================= -->
+  <a class="fab-whatsapp" href="https://wa.me/56951015652?text=Hola!%20Vengo%20del%20sitio%20web%20de%20Street%20Vision%20y%20me%20interesa%20cotizar." target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="fab-label">Cotizar por WhatsApp</span>
+  </a>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media Kit · The Street Vision · 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0F1A36;
+      --bg-2: #0A1228;
+      --orange: #FF8C2A;
+      --mint: #A6F0D0;
+      --lila: #B475D6;
+      --ink: #FFFFFF;
+      --soft: #C2D0EE;
+      --mute: #6E84B5;
+      --line: #243466;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 14px; }
+    body {
+      background: #2a2a2a;
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--bg);
+      padding: 18mm 16mm;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 6px 6px;
+      pointer-events: none;
+    }
+    .page > * { position: relative; z-index: 1; }
+
+    /* ===== HEADER ===== */
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8mm;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 8mm;
+    }
+    .head img { height: 30mm; width: auto; }
+    .head-meta {
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9pt;
+      letter-spacing: 0.1em;
+      color: var(--mute);
+      text-transform: uppercase;
+      line-height: 1.6;
+    }
+    .head-meta strong { color: var(--orange); }
+
+    /* ===== BIG TITLE ===== */
+    .lead {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: 50pt;
+      line-height: 0.95;
+      letter-spacing: 0.005em;
+      text-transform: uppercase;
+      margin-bottom: 8mm;
+    }
+    .lead em {
+      font-style: normal;
+      color: var(--orange);
+    }
+    .lead-sub {
+      font-size: 11pt;
+      color: var(--soft);
+      max-width: 130mm;
+      line-height: 1.6;
+      margin-bottom: 10mm;
+    }
+
+    /* ===== STATS ===== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4mm;
+      margin-bottom: 10mm;
+    }
+    .stat {
+      border-left: 2px solid var(--orange);
+      padding: 2mm 4mm;
+    }
+    .stat-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 28pt;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .stat-num span { font-size: 14pt; opacity: 0.8; }
+    .stat-lbl {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-top: 1mm;
+      font-weight: 500;
+    }
+
+    /* ===== TWO-COL ===== */
+    .twocol {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8mm;
+      margin-bottom: 8mm;
+    }
+
+    .block {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      padding: 5mm;
+    }
+    .block-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--orange);
+      text-transform: uppercase;
+      border-top: 1px solid var(--orange);
+      border-bottom: 1px solid var(--orange);
+      padding: 1mm 0;
+      margin-bottom: 3mm;
+    }
+    .block h3 {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: 18pt;
+      line-height: 1;
+      letter-spacing: 0.005em;
+      text-transform: uppercase;
+      margin-bottom: 4mm;
+    }
+    .block ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+    }
+    .block ul li {
+      display: flex;
+      gap: 3mm;
+      font-size: 10pt;
+      color: var(--soft);
+      line-height: 1.5;
+    }
+    .block ul li::before {
+      content: '+';
+      color: var(--orange);
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      flex-shrink: 0;
+    }
+
+    /* ===== SPECS TABLE ===== */
+    .specs-tbl {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9pt;
+    }
+    .specs-tbl tr { border-bottom: 1px dashed var(--line); }
+    .specs-tbl th {
+      text-align: left;
+      padding: 2mm 0;
+      width: 50%;
+      letter-spacing: 0.08em;
+      color: var(--mute);
+      font-size: 8pt;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    .specs-tbl td {
+      padding: 2mm 0;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ===== TARIFAS ===== */
+    .tarifas-wrap {
+      margin-bottom: 8mm;
+    }
+    .tarifas-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 4mm;
+    }
+    .tarifas-head h2 {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: 26pt;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .tarifas-head h2 em { color: var(--orange); font-style: normal; }
+    .tarifas-head .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      letter-spacing: 0.14em;
+      color: var(--mute);
+      text-transform: uppercase;
+    }
+
+    .tarifas-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+    }
+    .plan {
+      padding: 5mm 4mm;
+      border-right: 1px solid var(--line);
+      background: var(--bg-2);
+    }
+    .plan:last-child { border-right: none; }
+    .plan.hot { background: linear-gradient(180deg, var(--bg-2), #142a4a); border-top: 2px solid var(--orange); }
+    .plan-id {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--mute);
+      margin-bottom: 1.5mm;
+    }
+    .plan-id.hot { color: var(--orange); }
+    .plan-id.pre { color: var(--lila); }
+    .plan-name {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: 17pt;
+      line-height: 0.95;
+      text-transform: uppercase;
+      margin-bottom: 1.5mm;
+    }
+    .plan.hot .plan-name { color: var(--orange); }
+    .plan.full .plan-name { color: var(--lila); }
+    .plan-window {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      letter-spacing: 0.04em;
+      color: var(--soft);
+      margin-bottom: 3mm;
+      line-height: 1.5;
+      min-height: 7mm;
+    }
+    .plan-price {
+      font-family: 'Anton', sans-serif;
+      font-size: 22pt;
+      line-height: 1;
+      margin-bottom: 1mm;
+      letter-spacing: 0.005em;
+    }
+    .plan-price small {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      color: var(--mute);
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      margin-left: 1mm;
+    }
+    .plan-deltas {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      letter-spacing: 0.04em;
+      color: var(--mute);
+      text-transform: uppercase;
+      margin-top: 2mm;
+      line-height: 1.6;
+    }
+
+    .founder {
+      margin-top: 4mm;
+      padding: 3mm 5mm;
+      background: var(--orange);
+      color: var(--bg);
+      display: flex;
+      gap: 4mm;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .founder strong {
+      font-family: 'Anton', sans-serif;
+      font-size: 18pt;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+    .founder span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ===== PAGE 2 ===== */
+    .extras-wrap { margin-bottom: 8mm; }
+    .extras-head h2 {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: 26pt;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 5mm;
+    }
+    .extras-head h2 em { color: var(--mint); font-style: normal; }
+    .ex-row {
+      display: grid;
+      grid-template-columns: 1.5fr 2fr 1fr;
+      gap: 4mm;
+      align-items: center;
+      padding: 3mm 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .ex-row:first-of-type { border-top: 1px solid var(--line); }
+    .ex-row .ex-no {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--mint);
+      letter-spacing: 0.05em;
+      margin-right: 2mm;
+    }
+    .ex-row h3 {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: 13pt;
+      letter-spacing: 0.005em;
+      text-transform: uppercase;
+      display: inline;
+    }
+    .ex-row p {
+      font-size: 9pt;
+      color: var(--soft);
+      line-height: 1.5;
+    }
+    .ex-px {
+      text-align: right;
+    }
+    .ex-px-amt {
+      font-family: 'Anton', sans-serif;
+      font-size: 14pt;
+      color: var(--mint);
+      letter-spacing: 0.005em;
+    }
+    .ex-px-alt {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      color: var(--mute);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ===== ENTREGA ===== */
+    .entrega {
+      background: var(--bg-2);
+      border-left: 3px solid var(--mint);
+      padding: 5mm;
+      margin-bottom: 8mm;
+    }
+    .entrega h3 {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: 16pt;
+      letter-spacing: 0.005em;
+      text-transform: uppercase;
+      margin-bottom: 3mm;
+    }
+    .entrega-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3mm 6mm;
+    }
+    .entrega-grid div {
+      font-size: 9pt;
+      color: var(--soft);
+      line-height: 1.5;
+    }
+    .entrega-grid div strong {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-bottom: 0.5mm;
+    }
+
+    /* ===== FOOTER ===== */
+    .foot {
+      position: absolute;
+      bottom: 14mm;
+      left: 16mm;
+      right: 16mm;
+      border-top: 1px solid var(--line);
+      padding-top: 4mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5pt;
+      letter-spacing: 0.08em;
+      color: var(--mute);
+      text-transform: uppercase;
+    }
+    .foot-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 1mm;
+      line-height: 1.6;
+    }
+    .foot-contact strong {
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .foot-slogan {
+      font-family: 'Anton', sans-serif;
+      font-size: 12pt;
+      color: var(--orange);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .pagenum {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    /* ===== PRINT BUTTON ===== */
+    .print-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--orange);
+      color: var(--bg);
+      padding: 0.85rem 1.4rem;
+      border: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 11pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #000;
+      z-index: 100;
+    }
+    .print-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #000; }
+
+    @media print {
+      body { background: white; padding: 0; gap: 0; }
+      .page { box-shadow: none; margin: 0; page-break-after: always; }
+      .page:last-child { page-break-after: auto; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">↓ Descargar PDF</button>
+
+<!-- ============== PÁGINA 1 ============== -->
+<div class="page">
+
+  <header class="head">
+    <img src="../logo-streetvision.svg" alt="The Street Vision" />
+    <div class="head-meta">
+      MEDIA KIT <strong>· 2026</strong><br/>
+      ISSUE 01 — APERTURA<br/>
+      CONSTITUCIÓN · MAULE · CL
+    </div>
+  </header>
+
+  <h1 class="lead">
+    PUBLICIDAD<br/>
+    <em>LED PREMIUM</em><br/>
+    EN EL CORAZÓN<br/>
+    DE CONSTITUCIÓN.
+  </h1>
+
+  <p class="lead-sub">
+    Una pantalla LED de alto impacto en el centro de la ciudad, visible 15 horas al día,
+    los 7 días de la semana. Tu marca, frente a miles de personas que cruzan el corazón
+    urbano. Diseño incluido. Sin contratos rígidos.
+  </p>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num">15<span>HRS</span></span>
+      <span class="stat-lbl">Visibilidad diaria</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">600<span>+</span></span>
+      <span class="stat-lbl">Pasadas / día</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">10<span>SEG</span></span>
+      <span class="stat-lbl">Por spot</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">9<span>/9</span></span>
+      <span class="stat-lbl">Slots en rotación</span>
+    </div>
+  </div>
+
+  <div class="twocol">
+    <div class="block">
+      <span class="block-tag">§ 01 — POR QUÉ NOSOTROS</span>
+      <h3>Diseño incluido,<br/>sin sorpresas.</h3>
+      <ul>
+        <li>Diseño de tu pieza publicitaria sin costo adicional</li>
+        <li>Activación al aire en menos de 24 horas</li>
+        <li>Cambios de creatividad incluidos según plan</li>
+        <li>Reporte mensual de rotación</li>
+        <li>Sin contrato de permanencia</li>
+        <li>Atención local directa, sin intermediarios</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <span class="block-tag">§ 02 — FICHA TÉCNICA</span>
+      <h3>Una pantalla<br/>hecha para ser vista.</h3>
+      <table class="specs-tbl">
+        <tbody>
+          <tr><th>DIMENSIONES</th><td>4 m × 3 m</td></tr>
+          <tr><th>PIXEL PITCH</th><td>P5 (5 mm)</td></tr>
+          <tr><th>RESOLUCIÓN</th><td>800 × 560 px</td></tr>
+          <tr><th>HORARIO</th><td>07:00 — 22:00</td></tr>
+          <tr><th>COBERTURA</th><td>15 hrs · 7 días</td></tr>
+          <tr><th>FORMATOS</th><td>JPG · PNG · MP4</td></tr>
+          <tr><th>SPOT</th><td>10 segundos</td></tr>
+          <tr><th>LOOP</th><td>90 seg · 9 anunciantes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="tarifas-wrap">
+    <div class="tarifas-head">
+      <h2>TARIFAS <em>2026</em></h2>
+      <span class="tag">Precios netos en CLP · Mensuales</span>
+    </div>
+
+    <div class="tarifas-grid">
+      <div class="plan">
+        <div class="plan-id">PLAN A</div>
+        <div class="plan-name">OFF-PEAK</div>
+        <div class="plan-window">07:00–09:00<br/>21:00–22:00</div>
+        <div class="plan-price">$35.000<small>/MES</small></div>
+        <div class="plan-deltas">3 hrs · ~120 pasadas/día<br/>1 cambio incluido</div>
+      </div>
+
+      <div class="plan">
+        <div class="plan-id">PLAN B</div>
+        <div class="plan-name">STANDARD</div>
+        <div class="plan-window">09:00–12:30<br/>14:30–18:00</div>
+        <div class="plan-price">$85.000<small>/MES</small></div>
+        <div class="plan-deltas">7 hrs · ~280 pasadas/día<br/>2 cambios incluidos</div>
+      </div>
+
+      <div class="plan hot">
+        <div class="plan-id hot">PLAN C · HOT</div>
+        <div class="plan-name">PRIME</div>
+        <div class="plan-window">12:30–14:30<br/>18:00–21:00</div>
+        <div class="plan-price">$120.000<small>/MES</small></div>
+        <div class="plan-deltas">5 hrs · ~200 pasadas/día<br/>2 cambios · Peak</div>
+      </div>
+
+      <div class="plan full">
+        <div class="plan-id pre">PLAN D · MAX</div>
+        <div class="plan-name">FULL DAY</div>
+        <div class="plan-window">07:00–22:00<br/>todas las franjas</div>
+        <div class="plan-price">$170.000<small>/MES</small></div>
+        <div class="plan-deltas">15 hrs · ~600 pasadas/día<br/>4 cambios incluidos</div>
+      </div>
+    </div>
+
+    <div class="founder">
+      <strong>★ TARIFA FUNDADORES — 20% OFF</strong>
+      <span>Primeros 3 meses · Solo los primeros 5 anunciantes</span>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="foot-contact">
+      <span><strong>CONTACTO</strong> — contacto@streetvision.cl · +56 9 5101 5652</span>
+      <span>STREETVISION.CL · CONSTITUCIÓN, REGIÓN DEL MAULE, CHILE</span>
+      <span>THE STREET VISION LIMITADA · RUT 78.358.077-2</span>
+    </div>
+    <div class="foot-slogan">PÁG. <span class="pagenum">01/02</span></div>
+  </footer>
+</div>
+
+<!-- ============== PÁGINA 2 ============== -->
+<div class="page">
+
+  <header class="head">
+    <img src="../logo-streetvision.svg" alt="The Street Vision" />
+    <div class="head-meta">
+      MEDIA KIT <strong>· 2026</strong><br/>
+      ISSUE 01 — APERTURA<br/>
+      EXTRAS · ENTREGA · CONTACTO
+    </div>
+  </header>
+
+  <div class="extras-wrap">
+    <div class="extras-head">
+      <h2>EXTRAS <em>·</em> CUANDO NECESITAS ALGO MÁS</h2>
+    </div>
+
+    <div class="ex-row">
+      <div><span class="ex-no">+01</span><h3>Cambios extra de creatividad</h3></div>
+      <p>¿Cambias oferta cada semana? Suma cambios sueltos o lleva el pack de 4.</p>
+      <div class="ex-px">
+        <div class="ex-px-amt">$10.000 / c/u</div>
+        <div class="ex-px-alt">Pack 4 = $32.000</div>
+      </div>
+    </div>
+
+    <div class="ex-row">
+      <div><span class="ex-no">+02</span><h3>Spot exclusivo</h3></div>
+      <p>La pantalla 100% para tu marca durante 1–3 minutos. Lanzamientos, promos flash.</p>
+      <div class="ex-px">
+        <div class="ex-px-amt">$25.000 → $60.000</div>
+        <div class="ex-px-alt">Por sesión</div>
+      </div>
+    </div>
+
+    <div class="ex-row">
+      <div><span class="ex-no">+03</span><h3>Diseño custom</h3></div>
+      <p>Animaciones complejas, piezas a medida más allá del template incluido.</p>
+      <div class="ex-px">
+        <div class="ex-px-amt">$25.000 → $50.000</div>
+        <div class="ex-px-alt">Por pieza</div>
+      </div>
+    </div>
+
+    <div class="ex-row">
+      <div><span class="ex-no">+04</span><h3>Campañas de evento</h3></div>
+      <p>Conciertos, ferias, lanzamientos. Pauta puntual de 1 a 3 días.</p>
+      <div class="ex-px">
+        <div class="ex-px-amt">$20.000 / día</div>
+        <div class="ex-px-alt">Sin compromiso mensual</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="entrega">
+    <h3>§ 03 — ENTREGA DE MATERIAL</h3>
+    <div class="entrega-grid">
+      <div>
+        <strong>RESOLUCIÓN</strong>
+        800 × 560 px (ratio aprox. 10:7)
+      </div>
+      <div>
+        <strong>FORMATOS ACEPTADOS</strong>
+        JPG, PNG, MP4 (h.264)
+      </div>
+      <div>
+        <strong>DURACIÓN</strong>
+        Hasta 10 segundos por spot
+      </div>
+      <div>
+        <strong>SI NO TIENES MATERIAL</strong>
+        Lo diseñamos por ti, sin costo
+      </div>
+      <div>
+        <strong>PESO MÁXIMO</strong>
+        50 MB por archivo
+      </div>
+      <div>
+        <strong>TIEMPO DE ACTIVACIÓN</strong>
+        En el aire en menos de 24 hrs
+      </div>
+    </div>
+  </div>
+
+  <div class="twocol">
+    <div class="block">
+      <span class="block-tag">§ 04 — POR QUÉ ELLOS COMPRAN OOH</span>
+      <h3>La publicidad<br/>que no se salta.</h3>
+      <ul>
+        <li>No se puede bloquear con un ad-blocker</li>
+        <li>No depende del scroll: la ven los autos y los peatones</li>
+        <li>Recordación de marca 2× superior a digital</li>
+        <li>Ideal para anuncios geo-localizados (negocio local)</li>
+        <li>Combina con tu pauta de redes para reforzar</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <span class="block-tag">§ 05 — IDEAL PARA</span>
+      <h3>Cualquier rubro<br/>que quiera ser visto.</h3>
+      <ul>
+        <li>Comercio retail · ofertas, lanzamientos</li>
+        <li>Gastronomía · menús, eventos especiales</li>
+        <li>Salud · ópticas, farmacias, clínicas</li>
+        <li>Inmobiliaria · proyectos, ventas</li>
+        <li>Servicios · automotriz, financieros, educación</li>
+        <li>Eventos · conciertos, ferias, conferencias</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="foot-contact">
+      <span><strong>HABLEMOS</strong> — contacto@streetvision.cl · WhatsApp +56 9 5101 5652</span>
+      <span>WEB · STREETVISION.CL — INSTAGRAM · @THESTREETVISION.CL</span>
+      <span>THE STREET VISION LIMITADA · RUT 78.358.077-2 · CONSTITUCIÓN, MAULE, CHILE</span>
+    </div>
+    <div class="foot-slogan">PÁG. <span class="pagenum">02/02</span></div>
+  </footer>
+</div>
+
+</body>
+</html>
