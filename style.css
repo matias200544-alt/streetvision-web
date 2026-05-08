@@ -642,6 +642,18 @@ ul { list-style: none; }
   color: var(--lila);
   background-color: rgba(180, 117, 214, 0.15);
 }
+.plan-savings {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hi) 100%);
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  align-self: flex-start;
+  box-shadow: 0 4px 14px rgba(255, 140, 42, 0.3);
+}
 .plan-name {
   font-family: var(--font-display);
   font-weight: 400;
@@ -727,6 +739,80 @@ ul { list-style: none; }
   padding: var(--section-py) 0;
   background-color: var(--bg-deep);
 }
+.bundle-card {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, rgba(255, 140, 42, 0.12), rgba(180, 117, 214, 0.08));
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 2rem 2.2rem;
+  display: grid;
+  grid-template-columns: 60px 1fr auto auto;
+  gap: 1.8rem;
+  align-items: center;
+}
+.bundle-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(255, 140, 42, 0.18);
+  padding: 0.4rem 0.6rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  text-align: center;
+}
+.bundle-body h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.3rem;
+}
+.bundle-body p {
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+  max-width: 60ch;
+}
+.bundle-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  white-space: nowrap;
+}
+.bundle-amount {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2.2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.bundle-period {
+  font-size: 0.78rem;
+  color: var(--text-mute);
+}
+.bundle-saving {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--mint);
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+}
+@media (max-width: 980px) {
+  .bundle-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .bundle-tag { justify-self: flex-start; }
+  .bundle-price { align-items: flex-start; }
+}
+
 .extras-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
