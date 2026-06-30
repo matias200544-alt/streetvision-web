@@ -11,12 +11,8 @@
 const ZEPTO_API = 'https://api.zeptomail.com/v1.1/email';
 const FROM = { address: 'contacto@streetvision.cl', name: 'Street Vision' };
 const NOTIFY_TO = 'contacto@streetvision.cl';
-const LOGO = 'https://streetvision.cl/logo-email.png';
+const LOGO = 'https://streetvision.cl/logo-correo.png';
 const WA = 'https://wa.me/56951015652';
-
-export async function onRequestGet() {
-  return json({ ok: true, version: 'debug1' });
-}
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -50,23 +46,20 @@ export async function onRequestPost(context) {
       subject: 'Nueva cotización web · ' + (d.empresa || d.nombre || d.email),
       htmlbody: notifyHtml(d),
     }) });
-    const notifyBody = await notify.text();
+    if (!notify.ok) {
+      const t = await notify.text();
+      return json({ success: false, message: 'No se pudo enviar (' + notify.status + ')', detail: t }, 502);
+    }
 
-    // 2) Auto-reply branded al visitante
-    const reply = await fetch(ZEPTO_API, { method: 'POST', headers, body: JSON.stringify({
+    // 2) Auto-reply branded al visitante (no bloqueante)
+    await fetch(ZEPTO_API, { method: 'POST', headers, body: JSON.stringify({
       from: FROM,
       to: [{ email_address: { address: d.email, name: d.nombre || '' } }],
       subject: '¡Recibimos tu solicitud, ' + firstName(d.nombre) + '! · Street Vision',
       htmlbody: replyHtml(d),
     }) });
-    const replyBody = await reply.text();
 
-    // DEBUG temporal: expone la respuesta cruda de ZeptoMail para diagnóstico
-    return json({
-      success: notify.ok && reply.ok,
-      notify: { status: notify.status, body: notifyBody.slice(0, 500) },
-      reply:  { status: reply.status,  body: replyBody.slice(0, 500) },
-    });
+    return json({ success: true });
   } catch (e) {
     return json({ success: false, message: 'Error: ' + (e && e.message) }, 500);
   }
@@ -113,8 +106,8 @@ function replyHtml(d) {
     '<div style="background:#0A1228;padding:32px 0;font-family:Helvetica,Arial,sans-serif;">',
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">',
     '<table role="presentation" width="540" cellpadding="0" cellspacing="0" style="background:#0F1A36;border-radius:16px;overflow:hidden;border:1px solid #243466;">',
-    '<tr><td style="background:#15224A;padding:26px 32px;border-bottom:2px solid #FF8C2A;text-align:center;">',
-    '<img src="' + LOGO + '" alt="Street Vision · La ciudad está mirando." width="190" style="display:inline-block;width:190px;max-width:60%;height:auto;border:0;">',
+    '<tr><td style="background:#0F1A36;padding:26px 32px;border-bottom:2px solid #FF8C2A;text-align:center;">',
+    '<img src="' + LOGO + '" alt="Street Vision · La ciudad está mirando." width="200" style="display:inline-block;width:200px;max-width:62%;height:auto;border:0;">',
     '</td></tr>',
     '<tr><td style="padding:32px;">',
     '<p style="color:#E8EEF9;font-size:17px;margin:0 0 14px;">¡Hola, ' + esc(firstName(d.nombre)) + '! 👋</p>',
