@@ -14,6 +14,10 @@ const NOTIFY_TO = 'contacto@streetvision.cl';
 const LOGO = 'https://streetvision.cl/logo-email.png';
 const WA = 'https://wa.me/56951015652';
 
+export async function onRequestGet() {
+  return json({ ok: true, version: 'debug1' });
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   try {
@@ -46,20 +50,23 @@ export async function onRequestPost(context) {
       subject: 'Nueva cotización web · ' + (d.empresa || d.nombre || d.email),
       htmlbody: notifyHtml(d),
     }) });
-    if (!notify.ok) {
-      const t = await notify.text();
-      return json({ success: false, message: 'No se pudo enviar (' + notify.status + ')', detail: t }, 502);
-    }
+    const notifyBody = await notify.text();
 
-    // 2) Auto-reply branded al visitante (no bloqueante: si falla, igual fue recibida)
-    await fetch(ZEPTO_API, { method: 'POST', headers, body: JSON.stringify({
+    // 2) Auto-reply branded al visitante
+    const reply = await fetch(ZEPTO_API, { method: 'POST', headers, body: JSON.stringify({
       from: FROM,
       to: [{ email_address: { address: d.email, name: d.nombre || '' } }],
       subject: '¡Recibimos tu solicitud, ' + firstName(d.nombre) + '! · Street Vision',
       htmlbody: replyHtml(d),
     }) });
+    const replyBody = await reply.text();
 
-    return json({ success: true });
+    // DEBUG temporal: expone la respuesta cruda de ZeptoMail para diagnóstico
+    return json({
+      success: notify.ok && reply.ok,
+      notify: { status: notify.status, body: notifyBody.slice(0, 500) },
+      reply:  { status: reply.status,  body: replyBody.slice(0, 500) },
+    });
   } catch (e) {
     return json({ success: false, message: 'Error: ' + (e && e.message) }, 500);
   }
