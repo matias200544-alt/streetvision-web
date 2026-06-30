@@ -252,7 +252,7 @@ form.addEventListener('submit', async (e) => {
 
   try {
     const formData = new FormData(form);
-    const response = await fetch('https://api.web3forms.com/submit', {
+    const response = await fetch('/api/cotizacion', {
       method: 'POST',
       body: formData
     });
